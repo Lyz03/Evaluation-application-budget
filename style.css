@@ -2,3 +2,37 @@ body {
     font-family: sans-serif;
     color: #4c4c4c;
 }
+
+main {
+    display: flex;
+}
+
+input[type="number"] {
+    width: 5rem;
+}
+
+/*
+ * left
+ */
+.left {
+    width: 75%;
+}
+
+.expenses {
+    display: flex;
+}
+
+.expenses h2 {
+    width: 100%;
+}
+
+.expenses > div {
+    width: 50%;
+}
+
+/*
+ * right
+ */
+.right {
+    width: 25%;
+}
