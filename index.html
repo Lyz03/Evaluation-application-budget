@@ -40,9 +40,7 @@
                 <br>
                 <label for="childcare">Frais de garde :</label>
                 <input id="childcare" type="number">
-            </div>
-
-            <div>
+                <br>
                 <label for="income_tax">Impôt sur le revenu :</label>
                 <input id="income_tax" type="number">
                 <br>
@@ -51,7 +49,9 @@
                 <br>
                 <label for="current_expenses">Dépense courante :</label>
                 <input id="current_expenses" type="number">
-                <br>
+            </div>
+
+            <div>
                 <label for="shopping">Courses (hebdomadaire) :</label>
                 <input id="shopping" type="number">
                 <br>
@@ -69,6 +69,15 @@
                 <br>
                 <label for="other_expenses">Autre dépense :</label>
                 <input id="other_expenses" type="number">
+                <br>
+                <button id="expense_button">Envoyer</button>
+
+                <div>
+                    <label for="new_expense">Champ personnalisé :</label>
+                    <br>
+                    <input id="new_expense" type="text">
+                    <input type="submit">
+                </div>
             </div>
         </div>
 
@@ -77,6 +86,8 @@
         <div class="saving">
             <label for="saving">Épargne :</label>
             <input id="saving" type="number">
+            <br>
+            <button id="saving_button">Envoyer</button>
         </div>
 
     </div>
@@ -97,6 +108,8 @@
             <br>
             <label for="other_receipts">Autres recettes</label>
             <input id="other_receipts" type="number">
+            <br>
+            <button id="receipts_button">Envoyer</button>
         </div>
 
         <h2>Résultats</h2>

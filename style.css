@@ -11,11 +11,32 @@ input[type="number"] {
     width: 5rem;
 }
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    display: inline-block;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid gray;
+}
+
+button, input[type="submit"] {
+    border: none;
+    color: white;
+    background-color: #aac7cd;
+    padding: 0.3rem 0.8rem;
+}
+
+input[type="submit"] {
+    background-color: #9ea9e3;
+}
+
 /*
  * left
  */
 .left {
-    width: 75%;
+    width: 70%;
 }
 
 .expenses {
@@ -27,12 +48,14 @@ input[type="number"] {
 }
 
 .expenses > div {
-    width: 50%;
+    width: 35%;
+}
+
+label[for=new_expense] {
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 /*
  * right
  */
-.right {
-    width: 25%;
-}
