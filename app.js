@@ -61,10 +61,24 @@ function totalReceiptsF() {
     });
 }
 
+// have all categories been filled in
+function calcOrNo() {
+    if (a >= 2) {
+        printTotal();
+    } else
+        a++;
+}
+
 // add every total and print it in result
 function printTotal() {
     finalTotal = totalReceipts - (totalExpenses + totalSaving)
-    resultP.innerHTML = finalTotal.toString();
+    resultP.innerText = finalTotal.toString();
+    if (finalTotal === 0)
+        resultP.innerText += '\n' + 'Votre budget est respecté';
+    else if (finalTotal < 0)
+        resultP.innerText += '\n' + 'Attention, vous avez dépassé votre budget';
+    else
+        resultP.innerText += '\n' + 'Vous avez dépensé moins que prévus'
 }
 
 
@@ -72,6 +86,7 @@ submitExpenses.addEventListener("click", () => {
     totalExpenses = 0;
     totalFirstPart();
     totalSecondPart();
+    calcOrNo();
 });
 
 submitSaving.addEventListener("click", () => {
@@ -79,11 +94,13 @@ submitSaving.addEventListener("click", () => {
         saving.value = 0;
 
     totalSaving = parseInt(saving.value);
+    calcOrNo()
 });
 
 submitReceipts.addEventListener("click", () => {
     totalReceipts = 0
     totalReceiptsF();
+    calcOrNo();
 });
 
 // reset buttons
