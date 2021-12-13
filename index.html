@@ -9,6 +9,7 @@
 <body>
 
     <h1>Budget</h1>
+    <p>Toute les valeurs seront positives</p>
 
 <main>
     <div class="left">
@@ -16,7 +17,7 @@
         <h2>Dépenses</h2>
 
         <div class="expenses">
-            <div>
+            <div class="first_part">
                 <label for="charges">Charges et loyer :</label>
                 <input id="charges" type="number">
                 <br>
@@ -51,7 +52,7 @@
                 <input id="current_expenses" type="number">
             </div>
 
-            <div>
+            <div class="second_part">
                 <label for="shopping">Courses (hebdomadaire) :</label>
                 <input id="shopping" type="number">
                 <br>
@@ -70,13 +71,14 @@
                 <label for="other_expenses">Autre dépense :</label>
                 <input id="other_expenses" type="number">
                 <br>
-                <button id="expense_button">Envoyer</button>
 
-                <div>
+                <div class="third_part">
                     <label for="new_expense">Champ personnalisé :</label>
                     <br>
                     <input id="new_expense" type="text">
                     <input type="submit">
+                    <button id="expense_button">Envoyer</button>
+                    <button class="reset">Effacer</button>
                 </div>
             </div>
         </div>
@@ -88,6 +90,7 @@
             <input id="saving" type="number">
             <br>
             <button id="saving_button">Envoyer</button>
+            <button class="reset">Effacer</button>
         </div>
 
     </div>
@@ -109,13 +112,19 @@
             <label for="other_receipts">Autres recettes</label>
             <input id="other_receipts" type="number">
             <br>
+            <label for="new_receipts">Champ personnalisé :</label>
+            <br>
+            <input id="new_receipts" type="text">
+            <input type="submit">
+            <br>
             <button id="receipts_button">Envoyer</button>
+            <button class="reset">Effacer</button>
         </div>
 
         <h2>Résultats</h2>
 
         <div class="result">
-
+            <p></p>
         </div>
     </div>
 </main>

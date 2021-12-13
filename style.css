@@ -28,6 +28,10 @@ button, input[type="submit"] {
     padding: 0.3rem 0.8rem;
 }
 
+button:hover, input[type="submit"]:hover {
+    background-color: #b3b3b3;
+}
+
 input[type="submit"] {
     background-color: #9ea9e3;
 }
