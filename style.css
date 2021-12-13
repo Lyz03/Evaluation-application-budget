@@ -5,6 +5,7 @@ body {
 
 main {
     display: flex;
+    flex-wrap: wrap;
 }
 
 input[type="number"] {
@@ -26,6 +27,7 @@ button, input[type="submit"] {
     color: white;
     background-color: #aac7cd;
     padding: 0.3rem 0.8rem;
+    margin: 0.3rem;
 }
 
 button:hover, input[type="submit"]:hover {
@@ -65,5 +67,46 @@ label[for=new_expense] {
 }
 
 /*
- * right
+ * responsive
  */
+
+@media screen and (max-width: 1100px) {
+    .expenses > div {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .left {
+        width: 50%;
+        margin-left: 2rem;
+    }
+
+     .expenses {
+        flex-direction: column;
+    }
+
+    .expenses > div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 605px){
+    main {
+        justify-content: center;
+    }
+
+    .right, .left {
+        width: 60%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 480px){
+    body {
+        font-size: 0.8rem;
+    }
+    .right, .left {
+        width: 100%;
+    }
+}
