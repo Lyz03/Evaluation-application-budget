@@ -4,7 +4,7 @@ const resultP = document.querySelector('.result p');
 //expenses
 const expensesCustomInput = document.querySelector('.second_part .custom_input');
 const firstPart = document.querySelectorAll('.first_part input');
-const secondPart = document.querySelectorAll('.second_part > input');
+let secondPart = document.querySelectorAll('.second_part > input');
 const newExpense = document.querySelector('input[type=submit]');
 const newExpenseInput = document.querySelector('input[type="text"]');
 const submitExpenses = document.getElementById('expense_button');
@@ -15,7 +15,7 @@ const submitSaving = document.getElementById('saving_button');
 
 //receipts
 const receiptsCustomInput = document.querySelector('.receipts .custom_input');
-const receipts = document.querySelectorAll('.receipts input[type=number]');
+let receipts = document.querySelectorAll('.receipts input[type=number]');
 const newReceipts = document.querySelector('.receipts input[type=submit]');
 const newReceiptsInput = document.querySelector('.receipts input[type="text"]');
 const submitReceipts = document.getElementById('receipts_button');
@@ -76,7 +76,7 @@ function calcOrNo() {
 // add every total and print it in result
 function printTotal() {
     finalTotal = totalReceipts - (totalExpenses + totalSaving)
-    resultP.innerText = finalTotal.toString();
+    resultP.innerText = finalTotal.toString() + ' €';
     if (finalTotal === 0)
         resultP.innerText += '\n' + 'Votre budget est respecté';
     else if (finalTotal < 0)
@@ -133,6 +133,10 @@ function addInput(whichInput, whichPart) {
 
         whichPart.appendChild(label)
         whichPart.appendChild(input)
+        whichPart.appendChild(document.createElement('br'));
+
+        secondPart = document.querySelectorAll('.second_part input[type=number]');
+        receipts = document.querySelectorAll('.receipts input[type=number]');
 
         b++
     }
