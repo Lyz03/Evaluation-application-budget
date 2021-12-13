@@ -2,9 +2,11 @@ const resetButtons = document.querySelectorAll('.reset');
 const resultP = document.querySelector('.result p');
 
 //expenses
+const expensesCustomInput = document.querySelector('.second_part .custom_input');
 const firstPart = document.querySelectorAll('.first_part input');
 const secondPart = document.querySelectorAll('.second_part > input');
 const newExpense = document.querySelector('input[type=submit]');
+const newExpenseInput = document.querySelector('input[type="text"]');
 const submitExpenses = document.getElementById('expense_button');
 
 //saving
@@ -12,8 +14,10 @@ const saving = document.getElementById('saving');
 const submitSaving = document.getElementById('saving_button');
 
 //receipts
+const receiptsCustomInput = document.querySelector('.receipts .custom_input');
 const receipts = document.querySelectorAll('.receipts input[type=number]');
 const newReceipts = document.querySelector('.receipts input[type=submit]');
+const newReceiptsInput = document.querySelector('.receipts input[type="text"]');
 const submitReceipts = document.getElementById('receipts_button');
 
 let a = 0
@@ -112,3 +116,28 @@ resetButtons[0].addEventListener("click", () => {
 resetButtons[1].addEventListener("click", () => saving.value = '');
 
 resetButtons[2].addEventListener("click", () => receipts.forEach(value => value.value = ''));
+
+
+// add a custom input
+function addInput(whichInput, whichPart) {
+    if (whichInput.value !== '') {
+        let b = 0;
+
+        let input = document.createElement('input');
+        input.setAttribute('type', 'number');
+        input.id = 'id' + b
+
+        let label = document.createElement('label');
+        label.setAttribute('for', input.id);
+        label.innerText = whichInput.value
+
+        whichPart.appendChild(label)
+        whichPart.appendChild(input)
+
+        b++
+    }
+}
+
+newExpense.addEventListener("click", () => addInput(newExpenseInput, expensesCustomInput));
+
+newReceipts.addEventListener("click", () => addInput(newReceiptsInput, receiptsCustomInput));
